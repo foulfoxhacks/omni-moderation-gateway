@@ -1,0 +1,5 @@
+node_modules
+npm-debug.log
+omni-bot/node_modules
+.git
+.env
