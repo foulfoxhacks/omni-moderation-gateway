@@ -2,7 +2,7 @@
 
 Omni-Bot is a high-performance, modular management bot that seamlessly bridges **Discord** and **Telegram** while providing advanced music, moderation, economy, and VRChat group management tools.
 
-![Version](https://img.shields.io/badge/version-7.1.0-blue)
+![Version](https://img.shields.io/badge/version-7.0.0-blue)
 ![Node](https://img.shields.io/badge/Node.js-v22-green)
 ![Docker](https://img.shields.io/badge/Docker-Ready-blue)
 ![Status](https://img.shields.io/badge/Status-Operational-success)
@@ -102,4 +102,4 @@ If you have suggestions or encounter bugs, please reach out:
 *   **Subject:** Feature Request - Omni Moderation Gateway
     
 
-_Developed with ❤️ by the Infurnet Dev Team._
+_Developed with ❤️ by Sammy aka FoulFoxHacks._
