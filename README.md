@@ -1,77 +1,105 @@
-# 🤖 Omni-Bot: The Ultimate Discord & Telegram Multipurpose Bot
+# 🤖 Omni-Bot: The Ultimate Discord & Telegram Bridge
 
 Omni-Bot is a high-performance, modular management bot that seamlessly bridges **Discord** and **Telegram** while providing advanced music, moderation, economy, and VRChat group management tools.
 
-![Version](https://img.shields.io/badge/version-7.0.0-blue)
-![Node](https://img.shields.io/badge/Node.js-v16.9+-green)
-![License](https://img.shields.io/badge/license-MIT-important)
+![Version](https://img.shields.io/badge/version-7.1.0-blue)
+![Node](https://img.shields.io/badge/Node.js-v22-green)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue)
 ![Status](https://img.shields.io/badge/Status-Operational-success)
-
----
-
-## 📖 Table of Contents
-1. [Key Features](#-key-features)
-2. [Technical Architecture](#-technical-architecture)
-3. [Installation & Setup](#-installation--setup)
-4. [Configuration](#-configuration)
-5. [Command Reference](#-command-reference)
-6. [VRChat Management](#-vrchat-management)
-7. [Troubleshooting](#-troubleshooting)
 
 ---
 
 ## ✨ Key Features
 
 ### 🌉 Cross-Platform Bridge
-*   **Bi-Directional Sync:** Chat between Discord and Telegram in real-time with <100ms latency.
-*   **Webhook Identity:** Discord users see Telegram members with their actual avatars and names via Webhooks.
-*   **Media Handling:** Automatic compression and conversion of media across platforms (Images, Videos, Files).
-*   **Sticker Rendering:** Telegram stickers are converted to static images or GIFs for Discord viewing.
+*   **Bi-Directional Sync:** Real-time chat between Discord and Telegram.
+*   **Webhook Identity:** Telegram users appear in Discord with their actual avatars and names.
+*   **Media Support:** Seamlessly syncs Images, Videos, Audio, and Files across platforms.
 
 ### 🎵 Advanced Music System
-*   **Multi-Source:** High-fidelity playback from YouTube, Spotify, SoundCloud, and custom HLS streams.
-*   **Queue Management:** Persistent queues, vote-skipping, and DJ-role restrictions.
-*   **Audio Filters:** Real-time filters including BassBoost, Nightcore, and Vaporwave.
-*   **Stability:** Built with `@distube/ytdl-core` for 24/7 uptime.
+*   **Engine:** Optimized for **Node v22** and **FFmpeg** for high-fidelity playback.
+*   **Multi-Source:** Supports YouTube, Spotify, and SoundCloud.
+*   **Pro Features:** Audio filters (BassBoost, Nightcore), persistent queues, and DJ roles.
 
 ### 🛡️ Moderation & Security
-*   **Gatekeeper Captcha:** Prevents "Join-and-Spam" raids. 
-    *   **Discord:** Generates a 6-digit alphanumeric image captcha.
-    *   **Telegram:** Interactive inline-button challenge for new members.
-*   **Auto-Mod:** Heuristic analysis to detect nitro-scams, token grabbers, and repetitive spam.
-*   **Audit Logging:** Detailed logs for deleted messages, updated roles, and voice state changes.
+*   **Auto-Mod:** Automatic detection of scams, mass-mentions, and malicious links.
+*   **Captcha System:** Visual image verification for Discord and button-based for Telegram.
+*   **Audit Logging:** Detailed logs for deleted messages, role changes, and health reports.
+
+### 🎮 Integrations
+*   **VRChat Manager:** Host instances and announce them with automatic role pings.
+*   **Twitch Live:** Real-time stream announcements via Twitch API.
+*   **Economy:** Integrated XP, leveling, and custom currency systems.
 
 ---
 
-## 🏗 Technical Architecture
 
-Omni-Bot is built on a modular event-driven architecture designed for scalability:
-*   **Core:** Node.js with `discord.js` v14 and `telegraf` for Telegram.
-*   **Audio Engine:** Powered by `DisTube` and `play-dl` for optimized resource management.
-*   **Database:** Supports SQLite (local) or MongoDB (cloud) for leveling and economy data.
-*   **Bridge Logic:** Uses a mapping system that connects specific Discord `ChannelIDs` to Telegram `ChatIDs`.
+🚀 Deployment Option 1: Docker (Recommended)
+--------------------------------------------
 
----
+Docker is the preferred method as it bundles **Node.js v22** and **FFmpeg** automatically within a secure container.
 
-## 🚀 Installation
+1.  docker compose up -d --build    
+2.  docker logs -f omni-bot
+    
+🛠️ Deployment Option 2: Manual Installation
+--------------------------------------------
+
+Use this method if you wish to run the bot directly on your operating system (Ubuntu, Windows, macOS).
 
 ### 1. Prerequisites
-*   **Node.js:** v16.9.0 or higher.
-*   **FFmpeg:** Required for audio processing.
-    *   *Linux:* `sudo apt install ffmpeg`
-    *   *Windows:* Download from [ffmpeg.org](https://ffmpeg.org/download.html).
-*   **Tokens:** Discord Bot Token & Telegram Bot Token.
 
-### 2. Setup
-```bash
-# Clone the repository
-git clone https://github.com/foulfoxhacks/omni-moderation-gateway.git
+*   **Node.js:** v22.0.0 or higher.
+    
+*   **FFmpeg:** Must be installed and added to your System PATH.
+    
+    *   **Ubuntu/Debian:** sudo apt update && sudo apt install ffmpeg
+        
+    *   **MacOS:** brew install ffmpeg
+        
+    *   **Windows:** Download from [ffmpeg.org](https://www.google.com/url?sa=E&q=https://ffmpeg.org/download.html).
+        
 
-# Enter directory
-cd omni-bot
+### 2. Installation
 
-# Install dependencies
-npm install
+### Clone the repository  
 
-# Setup Environment Variables
-cp .env.example .env
+- git clone https://github.com/foulfoxhacks/omni-moderation-gateway.git  
+- cd omni-moderation-gateway  
+
+# Enter the bot directory and install dependencies  
+- cd omni-bot
+- npm install   
+
+### 3. Execution
+
+**Standard Run:**
+- node index.js   
+
+**Using PM2 (Recommended for 24/7 uptime):**
+- npm install pm2
+- pm2 start index.js --name "omni-bot" 
+- pm2 save   
+
+🛠 Troubleshooting
+------------------
+
+*   **Music Stuttering:** Ensure FFmpeg is updated. In Docker, this is handled automatically.
+    
+*   **Bridge Permissions:** If Telegram messages aren't appearing in Discord, ensure the bot has the Manage Webhooks permission in that specific channel.
+    
+*   **Restart Command:** The !restart command requires your Discord ID to be correctly set in the OWNER\_ID field of the .env file.
+    
+*   **Manual Node Errors:** If you see native module errors on manual install, run npm rebuild to sync dependencies with your OS.
+    
+
+### 📬 Feature Requests & Support
+
+If you have suggestions or encounter bugs, please reach out:
+
+*   **Email:** [theinfurnetdev@gmail.com](https://www.google.com/url?sa=E&q=mailto:theinfurnetdev@gmail.com)
+    
+*   **Subject:** Feature Request - Omni Moderation Gateway
+    
+
+_Developed with ❤️ by the Infurnet Dev Team._
