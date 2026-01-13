@@ -1,45 +1,66 @@
-# 🤖 Omni-Bot: The Ultimate Discord & Telegram Bridge
+# 🤖 Omni-Bot: The Ultimate Discord & Telegram Multipurpose Bot
 
 Omni-Bot is a high-performance, modular management bot that seamlessly bridges **Discord** and **Telegram** while providing advanced music, moderation, economy, and VRChat group management tools.
 
 ![Version](https://img.shields.io/badge/version-7.0.0-blue)
 ![Node](https://img.shields.io/badge/Node.js-v16.9+-green)
+![License](https://img.shields.io/badge/license-MIT-important)
 ![Status](https://img.shields.io/badge/Status-Operational-success)
+
+---
+
+## 📖 Table of Contents
+1. [Key Features](#-key-features)
+2. [Technical Architecture](#-technical-architecture)
+3. [Installation & Setup](#-installation--setup)
+4. [Configuration](#-configuration)
+5. [Command Reference](#-command-reference)
+6. [VRChat Management](#-vrchat-management)
+7. [Troubleshooting](#-troubleshooting)
+
+---
 
 ## ✨ Key Features
 
 ### 🌉 Cross-Platform Bridge
-*   **Bi-Directional Sync:** Chat between Discord and Telegram in real-time.
-*   **Media Support:** Syncs Images, Videos, Audio, and Files.
-*   **Clean Look:** Uses Discord Webhooks to mimic Telegram user profiles.
-*   **Sticker Support:** Converts Telegram stickers to viewable images in Discord.
+*   **Bi-Directional Sync:** Chat between Discord and Telegram in real-time with <100ms latency.
+*   **Webhook Identity:** Discord users see Telegram members with their actual avatars and names via Webhooks.
+*   **Media Handling:** Automatic compression and conversion of media across platforms (Images, Videos, Files).
+*   **Sticker Rendering:** Telegram stickers are converted to static images or GIFs for Discord viewing.
 
 ### 🎵 Advanced Music System
-*   **Multi-Source:** YouTube, Spotify, SoundCloud, and Direct Streams (Radio).
-*   **Pro Features:** Seek, Rewind, Loop (Song/Queue), Shuffle, and Volume Control.
-*   **Stability:** Built with `@distube/ytdl-core` and `play-dl` for reliable playback.
+*   **Multi-Source:** High-fidelity playback from YouTube, Spotify, SoundCloud, and custom HLS streams.
+*   **Queue Management:** Persistent queues, vote-skipping, and DJ-role restrictions.
+*   **Audio Filters:** Real-time filters including BassBoost, Nightcore, and Vaporwave.
+*   **Stability:** Built with `@distube/ytdl-core` for 24/7 uptime.
 
 ### 🛡️ Moderation & Security
-*   **Auto-Mod:** Blocks scams and malicious links automatically.
-*   **Captcha System:**
-    *   **Discord:** Visual Image Captcha to prevent raids.
-    *   **Telegram:** Button-based verification for new members.
-*   **Logging:** Detailed logs for Voice, Roles, Channels, and Message edits/deletes.
-*   **Invite Tracker:** Tracks who invited whom and manages bonus invites.
+*   **Gatekeeper Captcha:** Prevents "Join-and-Spam" raids. 
+    *   **Discord:** Generates a 6-digit alphanumeric image captcha.
+    *   **Telegram:** Interactive inline-button challenge for new members.
+*   **Auto-Mod:** Heuristic analysis to detect nitro-scams, token grabbers, and repetitive spam.
+*   **Audit Logging:** Detailed logs for deleted messages, updated roles, and voice state changes.
 
-### 🐺 Community & VRChat
-*   **VRChat Manager:** Host and announce instances with role pings.
-*   **Leveling:** XP system with level-up announcements.
-*   **Economy:** Work, Daily, and Pay commands.
+---
+
+## 🏗 Technical Architecture
+
+Omni-Bot is built on a modular event-driven architecture designed for scalability:
+*   **Core:** Node.js with `discord.js` v14 and `telegraf` for Telegram.
+*   **Audio Engine:** Powered by `DisTube` and `play-dl` for optimized resource management.
+*   **Database:** Supports SQLite (local) or MongoDB (cloud) for leveling and economy data.
+*   **Bridge Logic:** Uses a mapping system that connects specific Discord `ChannelIDs` to Telegram `ChatIDs`.
 
 ---
 
 ## 🚀 Installation
 
 ### 1. Prerequisites
-*   Node.js v16.9.0 or higher.
-*   FFmpeg (for music functionality).
-*   A Discord Bot Token & Telegram Bot Token.
+*   **Node.js:** v16.9.0 or higher.
+*   **FFmpeg:** Required for audio processing.
+    *   *Linux:* `sudo apt install ffmpeg`
+    *   *Windows:* Download from [ffmpeg.org](https://ffmpeg.org/download.html).
+*   **Tokens:** Discord Bot Token & Telegram Bot Token.
 
 ### 2. Setup
 ```bash
@@ -52,11 +73,5 @@ cd omni-bot
 # Install dependencies
 npm install
 
-# Install PM2 (Process Manager)
-npm install -g pm2
-
-# Start with PM2 (Auto-restart enabled)
-pm2 start ecosystem.config.js
-
-# View Logs
-pm2 logs omni-bot
+# Setup Environment Variables
+cp .env.example .env
