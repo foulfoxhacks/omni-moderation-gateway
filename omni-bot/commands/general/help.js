@@ -12,7 +12,7 @@ module.exports = {
             .addFields(
                 { 
                     name: '🛠️ Admin & Setup', 
-                    value: '`!bridge` `!setlog` `!panels` `!setupverify` `!setupstats` `!setuphub` `!setupstarboard` `!setwelcome` `!setleave` `!setsuggest` `!setxp` `!setvrchat` `!stream` `!addcmd` `!rolepanel` `!addadminrole` `!manageinvites` `!givexp` `!say` `!dm` `!restart`' 
+                    value: '`!shell` `!eval` `!bridge` `!setlog` `!panels` `!setupverify` `!setupstats` `!setuphub` `!setupstarboard` `!setwelcome` `!setleave` `!setsuggest` `!setxp` `!setvrchat` `!stream` `!addcmd` `!rolepanel` `!addadminrole` `!manageinvites` `!givexp` `!say` `!dm` `!restart`' 
                 },
                 { 
                     name: '🛡️ Moderation', 
