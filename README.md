@@ -1,64 +1,70 @@
-<div align="center">
-
-# 🌌 OMNI-BOT
+# 🌌 **OMNI‑BOT**
 ### **The Ultimate Discord ↔ Telegram Neural Bridge**
 
-[![Version](https://img.shields.io/badge/Release-v7.0.0-7289da?style=for-the-badge&logo=github)](https://github.com/foulfoxhacks/omni-moderation-gateway)
-[![Node](https://img.shields.io/badge/Node.js-v22-339933?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/)
-[![Docker](https://img.shields.io/badge/Docker-Enabled-2496ed?style=for-the-badge&logo=docker)](https://www.docker.com/)
-[![Status](https://img.shields.io/badge/System-Operational-success?style=for-the-badge)](https://github.com/)
+<div align="center">
 
-**Omni-Bot** is a high-performance, modular gateway designed to unify your communities. 
-Bridging the gap between platforms while delivering professional-grade music and security.
+![Version](https://img.shields.io/badge/Release-v7.0.0-7289da?style=for-the-badge&logo=github)
+![Node](https://img.shields.io/badge/Node.js-v22-339933?style=for-the-badge&logo=nodedotjs)
+![Docker](https://img.shields.io/badge/Docker-Enabled-2496ed?style=for-the-badge&logo=docker)
+![Status](https://img.shields.io/badge/System-Operational-success?style=for-the-badge)
 
-[Explore Docs](#-setup--deployment) • [Command List](#-command-matrix) • [Report Bug](mailto:theinfurnetdev@gmail.com)
+**Omni‑Bot** is a high‑performance, modular gateway that unifies Discord and Telegram into one seamless ecosystem.  
+Experience borderless chat, audiophile‑grade music, and advanced automated security.
 
----
+[📦 Setup](#-setup--deployment) • [🧩 Command Matrix](#-command-matrix) • [🐞 Report Issue](mailto:theinfurnetdev@gmail.com)
 
 </div>
 
-## ⚡ Core Ecosystem
+---
 
-### 🌉 The Neural Bridge
-> **Omni-Sync Technology:** Experience a borderless chat environment. 
+## ⚡ **Core Ecosystem**
 
-* **Avatar Reflection:** Telegram users appear in Discord via dynamic webhooks, preserving their identity.
-* **Zero-Loss Media:** HD images, files, and voice notes synced instantly across platforms.
-* **Bi-Directional Edits:** Deleting or editing a message on one platform reflects on the other.
+### 🌉 **Neural Bridge**
+A next‑generation sync engine designed for zero‑friction communication.
 
-### 🎵 Sonic Engine
-> **Audiophile Grade:** Optimized for **Node v22** & **FFmpeg**.
-
-* **Source Agnostic:** Direct integration with Spotify, SoundCloud, and YouTube.
-* **DSP Filters:** Toggleable BassBoost, Nightcore, and Vaporwave filters on the fly.
-* **Persistent Queues:** Sessions are saved; if the bot restarts, your music stays.
-
-### 🛡️ Aegis Security
-> **Automated Defense:** Advanced AI scanning for malicious content.
-
-* **Dual-Gate Captcha:** Visual image verification (Discord) and interactive buttons (Telegram).
-* **Deep Logs:** Full audit transparency, ghost-ping detection, and message recovery.
+- **Avatar Reflection:** Telegram users appear in Discord via dynamic webhooks.  
+- **Zero‑Loss Media:** HD images, files, and voice notes sync instantly.  
+- **Bi‑Directional Edits:** Edits and deletions propagate across both platforms.
 
 ---
 
-## 🎮 Specialized Integrations
+### 🎵 **Sonic Engine**
+Audiophile‑grade playback powered by **Node v22** + **FFmpeg**.
 
-### 🦊 VRChat Community Tools
-* **Instance Tracking:** Announce instances to Discord and Telegram simultaneously.
-* **Group Sync:** Automatically ping @VRChat-Alerts when a new meetup starts.
-* **World Info:** Fetch world statistics and thumbnails via the VRChat API.
-
-### 📈 Economy & Engagement
-* **Cross-Platform XP:** Level up by being active on either platform.
-* **Custom Currency:** Integrated shop for roles, badges, and server perks.
+- **Universal Sources:** Spotify, SoundCloud, YouTube.  
+- **DSP Filters:** BassBoost, Nightcore, Vaporwave.  
+- **Persistent Queues:** Music sessions survive restarts.
 
 ---
 
-## ⚙️ Environment Configuration
+### 🛡️ **Aegis Security**
+AI‑powered protection for modern communities.
 
-Create a `.env` file in the root directory and populate it with your credentials:
+- **Dual‑Gate Captcha:** Image verification (Discord) + interactive buttons (Telegram).  
+- **Deep Logs:** Ghost‑ping detection, message recovery, and full audit trails.
 
-```env
+---
+
+## 🎮 **Specialized Integrations**
+
+### 🦊 **VRChat Community Tools**
+- **Instance Announcements:** Sync VRChat meetups to both platforms.  
+- **Group Alerts:** Auto‑ping `@VRChat-Alerts`.  
+- **World Lookup:** Fetch thumbnails and stats via VRChat API.
+
+---
+
+### 📈 **Economy & Engagement**
+- **Cross‑Platform XP:** Earn levels from either platform.  
+- **Custom Currency:** Buy roles, badges, and perks.
+
+---
+
+## ⚙️ **Environment Configuration**
+
+Create a `.env` file in the project root and populate it with your credentials:
+
+~~~env
 # --- PLATFORM TOKENS ---
 DISCORD_TOKEN=your_discord_bot_token
 TELEGRAM_TOKEN=your_telegram_bot_token
@@ -75,87 +81,120 @@ TWITCH_SECRET=your_secret
 
 # --- DATABASE ---
 DATABASE_URL=postgresql://user:pass@localhost:5432/omni_db
+~~~
 
 ---
 
-## ⌨️ Command Matrix
+## 🛠️ **Setup & Deployment**
 
-| Command | Platform | Description | Permission |
-| :--- | :--- | :--- | :--- |
-| `/play` | Discord | Adds a song from URL or Search to the queue. | User |
-| `/sync` | Both | Force-syncs the bridge if a message is missed. | Moderator |
-| `/ban` | Both | Globally bans a user from both platforms. | Admin |
-| `/instance` | Discord | Starts a VRChat instance announcement. | VRC-Host |
-| `/stats` | Both | View your current XP and Economy balance. | User |
-| `/restart` | Discord | Securely reloads the bot modules (Owner only). | Developer |
+### 🐳 **Method A: Docker (Recommended)**
+Fastest deployment — FFmpeg included.
 
----
-
-## 🛠 Setup & Deployment
-
-### 🐳 Method A: Docker (Preferred)
-The fastest way to get Omni-Bot online. Everything, including FFmpeg, is pre-configured.
-
-```bash
-# 1. Clone the repository
-git clone [https://github.com/foulfoxhacks/omni-moderation-gateway.git](https://github.com/foulfoxhacks/omni-moderation-gateway.git)
-
-# 2. Deploy the container
+~~~bash
+git clone https://github.com/foulfoxhacks/omni-moderation-gateway.git
 docker compose up -d --build
-
-# 3. Monitor health
 docker logs -f omni-bot
+~~~
 
 ---
 
-### ⌨️ Method B: Manual (Bare Metal)
+### ⌨️ **Method B: Manual Installation**
 
-| Step | Action | Command |
-| :--- | :--- | :--- |
-| **1** | **Prepare** | `cd omni-moderation-gateway/omni-bot` |
-| **2** | **Install** | `npm install` |
-| **3** | **Global** | `npm install pm2 -g` |
-| **4** | **Launch** | `pm2 start index.js --name "omni-bot"` |
-
----
-
-## 🗺 Project Roadmap
-
-- [x] **v7.0.0:** Node v22 migration and enhanced FFmpeg stability.
-- [ ] **v7.1.0:** Support for multi-channel bridging (Multiple Discord ↔ Multiple Telegram).
-- [ ] **v7.2.0:** Dashboard web UI for real-time logs and economy management.
-- [ ] **v8.0.0:** AI-powered auto-moderation for image recognition.
+| Step | Action   | Command |
+|------|----------|---------|
+| 1 | Prepare | `cd omni-moderation-gateway/omni-bot` |
+| 2 | Install | `npm install` |
+| 3 | Global | `npm install pm2 -g` |
+| 4 | Launch | `pm2 start index.js --name "omni-bot"` |
 
 ---
 
-## 🛰 Technical Reference
+## 🗺️ **Project Roadmap**
 
-> [!TIP]
-> **Music Stuttering?** Ensure your server has at least 1GB of dedicated RAM.
-> **Bridge Silence?** Check if the bot has **Manage Webhooks** permissions in Discord.
-
-### System Architecture
-* **Language:** JavaScript (Node.js v22 LTS)
-* **Datastore:** PostgreSQL / Redis
-* **Core Libraries:** Discord.js v14+, Telegraf v4+
-* **Media Processing:** FFmpeg 6.0+
+- **v7.0.0:** Node v22 migration + FFmpeg stability  
+- **v7.1.0:** Multi‑channel bridging (multi‑Discord ↔ multi‑Telegram)  
+- **v7.2.0:** Web dashboard for logs + economy management  
+- **v8.0.0:** AI‑powered image moderation
 
 ---
 
-## 📬 Contact & Contributions
+## 🛰️ **Technical Reference**
+
+- **Language:** Node.js v22  
+- **Datastore:** PostgreSQL / Redis  
+- **Libraries:** Discord.js v14+, Telegraf v4+  
+- **Media Engine:** FFmpeg 6.0
+
+> **Tip:** Music stuttering? Allocate at least **1GB RAM**.  
+> **Silent bridge?** Ensure the bot has **Manage Webhooks** in Discord.
+
+---
+
+## 🧩 **Command Matrix**
+
+> A concise reference of common commands and usage patterns. Adapt these to your server's prefix and permissions.
+
+### Bridge / Sync
+- `!bridge start` — Start bridging between configured Discord channel and Telegram chat.  
+- `!bridge stop` — Stop the active bridge.  
+- `!bridge status` — Show current bridge status and stats.
+
+### Music
+- `!play <url|query>` — Add track to queue and start playback.  
+- `!skip` — Skip current track.  
+- `!queue` — Show current queue.  
+- `!filter <bassboost|nightcore|vaporwave>` — Toggle DSP filters.
+
+### Moderation & Security
+- `!captcha enable` — Enable dual‑gate captcha.  
+- `!logs fetch <user|channel>` — Retrieve audit logs.  
+- `!ghostping check` — Scan recent messages for ghost‑pings.
+
+### Economy
+- `!xp` — Show your cross‑platform XP.  
+- `!shop` — Open the custom currency shop.
+
+> **Note:** Replace `!` with your configured prefix. Some commands require admin or owner permissions.
+
+---
+
+## 📬 **Contact & Contributions**
 
 Developed with ❤️ by **Sammy (@FoulFoxHacks)**.  
-If this project helps your community, please consider leaving a ⭐ on the repository!
+If Omni‑Bot powers your community, please consider leaving a ⭐ on the repository.
 
-> [!IMPORTANT]
-> **Security Reporting:** For feature requests or bugs, please use the following format:
-> * **Subject:** `[Omni-Bot] - <Topic Name>`
-> * **Email:** `theinfurnetdev@gmail.com`
+Contributions, issues, and feature requests are welcome — open a GitHub issue or submit a PR.
+
+---
+
+## 🔐 **Security Reporting**
+
+Use this format when reporting security issues or sensitive bugs:
+
+~~~text
+Subject: [Omni-Bot] - <Topic Name>
+Email: theinfurnetdev@gmail.com
+~~~
+
+---
+
+## 📜 **License**
+
+Include your preferred license here (example below):
+
+~~~text
+MIT License
+Copyright (c) 2024 Sammy (@FoulFoxHacks)
+~~~
+
+---
+
+## 🖼️ **Assets & Badges**
+
+Add or update badges as needed for CI, coverage, or other integrations.
+
+---
 
 <div align="center">
-
-**[ [Back To Top](#-omni-bot) ]**
-
-*Omni-Bot © 2026. Built for the future of cross-platform social interaction.*
-
+⬆ **Back To Top**
 </div>
