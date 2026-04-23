@@ -1,4 +1,4 @@
-# 🌌 **OMNI‑BOT**
+# 🌌 **OMNI‑MODERATION GATEWAY**
 ### **The Ultimate Discord ↔ Telegram Neural Bridge**
 
 <div align="center">
